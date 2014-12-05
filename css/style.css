@@ -591,6 +591,39 @@
 /*********************************************************************************/
 /* Wrappers                                                                      */
 /*********************************************************************************/
+	.contentTable
+	{
+		background-color: #fff;
+		width : 100%;
+		height: 100%;
+		padding: 10px 10px 10px 10px;
+
+	}
+	
+	#title
+	{
+		font-size:2em;
+		margin: 10px 10px 10px 10px;
+		border-bottom: 4px solid #90bade;
+	}
+	#parags
+	{
+		font-size:1em;
+		color:#000;
+		width:100%;
+		margin: 13px 5px 13px 5px;
+		border-bottom: 1px solid #CCC;
+
+	}
+	
+	.noteslist
+	{
+		width : 100%;
+		height: 100%;
+		padding: 2px 2px 2px 2px;
+		border: 4px solid #90bade;
+	}
+
 
 	.wrapper
 	{
@@ -601,6 +634,17 @@
 		.wrapper.first
 		{
 			box-shadow: none;
+		}
+		.wrapper.meh
+		{
+			background-color: #639;
+		}
+		
+		#meh {
+			background-color: #e9e9e9;
+			padding: 3em 22em 3em 22em;
+			text-align:left
+
 		}
 
 		.wrapper.style1
