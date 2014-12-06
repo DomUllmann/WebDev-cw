@@ -63,10 +63,41 @@
 		{
 		}
 		
+		
 			form .button
 			{
-				margin: 0 0.5em 0 0.5em;
+				margin: 0 0.5em 0 0;
 			}
+			
+			#narrow
+			{
+				width:24em;
+				color:#000;
+			}
+			#narrowAndHigh
+			{
+				width:24em;
+				height: 10em;
+				color:#000;
+				text-align:start;
+			}
+			
+			
+			#big
+			{
+				height:auto;
+				color:#000;
+				text-align:start;
+			}
+			
+			#highTextArea
+			{
+				height:20em;
+				
+			}
+			
+			
+		
 
 	/* Button */
 	
@@ -86,6 +117,24 @@
 			{
 				font-size: 1.5em;
 				letter-spacing: -0.025em;
+			}
+			
+			#smallBtn
+			{
+				height:2em;
+				font-size:0.5em;
+				padding: 0 15px 0 15px;
+				background: #093;
+				margin-left:4em;
+			}
+			
+			.button : hover #smallBtn
+			{
+				height:2em;
+				background: #090;
+				font-size:0.5em;
+				padding: 0 15px 0 15px;
+				margin-left:4em;
 			}
 
 	/* Box */
@@ -133,10 +182,15 @@
 		text-align: center;
 	}
 	
+		.wrapper.firstSmall
+		{
+			padding-top: 4em;
+		}
 		.wrapper.first
 		{
-			padding-top: 12em;
+			padding-top: 8em;
 		}
+
 
 /*********************************************************************************/
 /* Nav                                                                           */
@@ -183,6 +237,13 @@
 		{
 			width: 20em;
 			height: 20em;
+			margin: 0;
+		}
+		
+		#top .avatar
+		{
+			width: 10em;
+			height: 10em;
 			margin: 0;
 		}
 
