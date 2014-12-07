@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebDev.Models;
+using System.Web.ModelBinding;
 
 namespace WebDev
 {
@@ -12,6 +14,13 @@ namespace WebDev
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public IQueryable<Subject> GetSubjects([QueryString("SubjectID")] int? subjectID)
+        {
+            var _db = new WebDev.Models.ModuleContext();
+            IQueryable<Subject> query = _db.Subjects;
+            return query;
         }
     }
 }

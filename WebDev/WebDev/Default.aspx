@@ -3,6 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Home -->
+    <section>
 <div class="wrapper style1 first">
   <article class="container" id="top">
     <div class="row">
@@ -17,17 +18,59 @@
     </div>
   </article>
 </div>
+        </section>
+    <section>
 
 <!-- List of topics -->
-<div class="wrapper style1" id = "meh">
-  <div class="contentTable">
-    <ul class = "noteslist">
-      <h1 id="title">Subject Areas</h1>
-      <li id="parags"><a href="modulepage.html"id="parags">Computer Science</a></li>
-      <li id="parags"><a href="/notes"id="parags">Topic 2 </a></li>
-      <li id="parags"><a href="/notes"id="parags">Topic 3 </a></li>
-    </ul>
-  </div>
-</div>
+    <asp:ListView ID="subjectList" runat="server"
+        DataKeyNames="SubjectID" GroupItemCount="1"
+        ItemType="WebDev.Models.Subject" SelectMethod="GetSubjects">
+        <EmptyDataTemplate>
+            <table>
+                <tr>
+                    <td>No data was returned.</td>
+                </tr>
+            </table>
+        </EmptyDataTemplate>
+        <EmptyItemTemplate>
+            <td />
+        </EmptyItemTemplate>
+        <GroupTemplate>
+                     <td id="itemPlaceholder" runat="server"></td>
+                </GroupTemplate>
+                <ItemTemplate>
+                    <tr>
+                    <td>
+                        <a href="SubjectPage.aspx?subjectID=<%#:Item.SubjectID%>" id="parags"><%#:Item.SubjectName %></a>
+                    </td>
+                        </tr>
+                </ItemTemplate>
+        <LayoutTemplate>
+            <div class="wrapper style1" id="meh">
+                <div class="contentTable">
+                    
+                        <div class="noteslist">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+            <table class="table">
+                        <tbody>
+                            <tr id="groupPlaceholder" runat="server"></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+                        </div>
+                    </div>
+                </div>
+        </LayoutTemplate>
+    </asp:ListView>
+
+        </section>
 
 </asp:Content>

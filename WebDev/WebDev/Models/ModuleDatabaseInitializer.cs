@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace WebDev.Models
 {
-    public class ModuleDatabaseInitializer : DropCreateDatabaseIfModelChanges<ModuleContext>
+    public class ModuleDatabaseInitializer : DropCreateDatabaseAlways<ModuleContext>
     {
         protected override void Seed(ModuleContext context)
         {

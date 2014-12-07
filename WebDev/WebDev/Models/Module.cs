@@ -7,10 +7,10 @@ namespace WebDev.Models
         [StringLength(8), Display(Name = "Module")]
         public string ModuleID { get; set; }
 
-        [Required, StringLength(50), Display(Name = "Title")]
+        [Required, StringLength(100), Display(Name = "Title")]
         public string ModuleTitle { get; set; }
 
-        [Required, StringLength(400), Display(Name = "Module Description"), DataType(DataType.MultilineText)]
+        [Required, StringLength(1000), Display(Name = "Module Description"), DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
         public int? SubjectID { get; set; }
