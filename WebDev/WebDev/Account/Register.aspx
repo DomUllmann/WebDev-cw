@@ -37,6 +37,30 @@
             </div>
         </div>
         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Username" TextMode="SingleLine" CssClass="form-control" />
+                
+            </div>
+        </div>
+         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Degree" CssClass="col-md-2 control-label">Degree</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Degree" TextMode="SingleLine" CssClass="form-control" />
+                
+            </div>
+        </div>
+
+         <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="Bio" CssClass="col-md-2 control-label">Something about yourself</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Bio" TextMode="MultiLine" CssClass="form-control" />
+                
+            </div>
+        </div>
+
+          
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
             </div>

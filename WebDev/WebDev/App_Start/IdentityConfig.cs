@@ -82,6 +82,11 @@ namespace WebDev
             }
             return manager;
         }
+
+        internal IdentityResult ChangeDegree(string p1, string p2)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
