@@ -38,7 +38,7 @@
                         <div class="noteslist">
             <div class="container">
             <div class="row">
-                <h1>Notes</h1>
+                <h1 id="title">Notes</h1>
             <table class="table">
                         <tbody>
         <asp:ListView ID="notesList" runat="server"

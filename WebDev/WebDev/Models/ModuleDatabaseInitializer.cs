@@ -11,6 +11,7 @@ namespace WebDev.Models
             GetModules().ForEach(m => context.Modules.Add(m));
             GetQuestions().ForEach(q => context.Questions.Add(q));
             GetAnswers().ForEach(a => context.Answers.Add(a));
+            GetNotes().ForEach(n => context.Notes.Add(n));
         }
 
         private static List<Subject> GetSubjects()
@@ -39,9 +40,7 @@ namespace WebDev.Models
                 new Module{
                     ModuleID = "COMP6205",
                     ModuleTitle = "Web Development",
-                    Description = "A module to explore the area of Web Development, teaching students best" + 
-                                    " practise and to introduce students to ASP.net and the Visual Studio" +
-                                    " development environment.",
+                    Description = "A module to explore the area of Web Development, teaching students best practise and to introduce students to ASP.net and the Visual Studio development environment.",
                     SubjectID = 1
                 },
                 new Module{
@@ -270,5 +269,32 @@ namespace WebDev.Models
             };
             return answers;
         }
+       
+        private static List<Notes> GetNotes()
+        {
+            var notes = new List<Notes> {
+                new Notes{
+                    NotesID = 1,
+                    NotesTitle = "The first notes document ever!",
+                    NotesBody = "Awesome document!",
+                    User = "Dom",
+                    Created = System.DateTimeOffset.Now,
+                    
+                    ModuleID = "COMP6205"
+                },
+                new Notes{
+                    NotesID = 2,
+                    NotesTitle = "Wow it works, awesome!",
+                    NotesBody = "Of course it works, you guys have done it awesomely!",
+                    User = "Sam",
+                    Created = System.DateTimeOffset.Now,
+                    Modified = System.DateTimeOffset.Now,
+                    UserModified = "Dom",
+                    ModuleID = "COMP6205"
+                }
+            };
+            return notes;
+        }
+
     }
 }

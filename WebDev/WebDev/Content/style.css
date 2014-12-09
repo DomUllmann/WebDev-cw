@@ -17,6 +17,14 @@ body, input, textarea, select {
 	color: #888;
 	font-weight: 300;
 }
+
+#notescontent
+{
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+}
+
 body.is-loading * {
 	-moz-transition: none !important;
 	-webkit-transition: none !important;
@@ -459,14 +467,6 @@ ol.default li {
 /*********************************************************************************/
 /* Custom css                                                                      */
 /*********************************************************************************/
-
-.answer{
- border: 5px solid #90BADE;
- border-radius: 10px;
- background-color: white;
- margin-bottom: 2em;
-}
-
 .contentTable {
 	background-color: #fff;
 	width : 100%;
@@ -494,7 +494,7 @@ ol.default li {
 	width : 100%;
 	height: 100%;
 	padding: 2px 2px 2px 2px;
-	border: 4px solid #90bade;
+	border: 4px solid #003;
     list-style: none;
 }
 #meh {
@@ -502,10 +502,6 @@ ol.default li {
 	padding: 3em 22em 3em 22em;
 	color: #000;
 	text-align: left
-}
-
-#grey{
-    background-color: #999;
 }
 /*********************************************************************************/
 /* Wrappers                                                                      */

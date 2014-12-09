@@ -20,11 +20,14 @@
                         <ItemTemplate>
                             <header>
                                 <h1><strong><%#: Item.NotesTitle %></strong></h1>
-                                <h4>Asked by: <%#:Item.User %></h4>
-                                <h4>Modified by: <%#:Item.UserModified %></h4>
+                                <h4>Asked by: <%#:Item.User %> at <%#:Item.Created %></h4>
+                                <h4>Modified by: <%#:Item.UserModified %> at <%#:Item.Modified %></h4>
 
                             </header>
-                            <h5><%#:Item.NotesBody %></h5>
+                            <p id="notescontent"><%#:Item.NotesBody %></p>
+
+                            <br /><br />
+                            <a href="Module.aspx?moduleID=<%#:Item.ModuleID%>" id="parags">Go back to <%#:Item.ModuleID %></a>
                         </ItemTemplate>
                     </asp:FormView>
         </header>
