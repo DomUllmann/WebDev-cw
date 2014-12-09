@@ -11,19 +11,19 @@ namespace WebDev.Models
         [ScaffoldColumn(false)]
         public int AnswerID { get; set; }
 
-        [Required, StringLength(4000)]
+        [Required, StringLength(10000), Display(Name="Answer"), DataType(DataType.MultilineText)]
         public string AnswerBody { get; set; }
 
-        [Required, StringLength(128)]
+        [ScaffoldColumn(false),Required, StringLength(128)]
         public string User { get; set; }
 
-        [Required]
+        [ScaffoldColumn(false), Required]
         public DateTimeOffset Created { get; set; }
 
-        [Required]
+        [ScaffoldColumn(false), Required]
         public bool Solved { get; set; }
 
-        [Required]
+        [ScaffoldColumn(false), Required]
         public int QuestionID { get; set; }
     }
 }

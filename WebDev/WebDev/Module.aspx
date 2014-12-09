@@ -1,5 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Module.aspx.cs" Inherits="WebDev.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="wrapper style1 first">
+                <asp:FormView ID="crumb" runat="server" DataKeyNames="ID" 
+                    ItemType="WebDev.Models.Breadcrumb" SelectMethod="GetBreadcrumbs">
+                    <EmptyDataTemplate></EmptyDataTemplate>
+                    <ItemTemplate>
+                        You are here: <a href="Default.aspx">Home</a> -> <a href="Subject.aspx?subjectID=<%#:Item.SubjectID %>"><%#:Item.SubjectName %></a>
+                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a>
+                    </ItemTemplate>
+                </asp:FormView>
+                </div>
+        </div>
+    </div>
         <section>
         <div class="wrapper style1 first">
           <article class="container" id="top">
@@ -73,7 +87,6 @@
                         
         </LayoutTemplate>
     </asp:ListView>
-                            
         <asp:FormView ID="mod" runat="server" DataKeyNames="ModuleID"
                         ItemType ="WebDev.Models.Module" SelectMethod ="GetModules">
                         <EmptyDataTemplate>
@@ -85,61 +98,6 @@
                            
                         </ItemTemplate>
                     </asp:FormView>
-
-                            
-                            </tbody>
-                    </table>
-                </div>
-
-                            <div class="row">
-                <h1>Questions</h1>
-            <table class="table">
-                        <tbody>
-                             <asp:ListView ID="ListView2" runat="server"
-        DataKeyNames="NotesID" GroupItemCount="3"
-        ItemType="WebDev.Models.Notes" SelectMethod="GetNotes">
-        <EmptyDataTemplate>
-            <table>
-                <tr>
-                    <td>Oops, something went wrong, please try again!</td>
-                </tr>
-            </table>
-        </EmptyDataTemplate>
-        <EmptyItemTemplate>
-            <td />
-        </EmptyItemTemplate>
-        <GroupTemplate>
-                     <td id="itemPlaceholder" runat="server"></td>
-                    
-                </GroupTemplate>
-                <ItemTemplate>
-                    <tr>
-                    <td>
-                        <a href="ViewNotes.aspx?notesID=<%#:Item.NotesID%>" id="parags"><%#:Item.NotesTitle %></a>
-                    </td>
-                        </tr>
-                </ItemTemplate>
-            
-        <LayoutTemplate>
-                            <tr id="groupPlaceholder" runat="server"></tr>
-                        
-        </LayoutTemplate>
-    </asp:ListView>
-                            
-        <asp:FormView ID="FormView2" runat="server" DataKeyNames="ModuleID"
-                        ItemType ="WebDev.Models.Module" SelectMethod ="GetModules">
-                        <EmptyDataTemplate>
-                        </EmptyDataTemplate>
-
-                        <ItemTemplate>
-                            
-                                <h3><a href="NotesList.aspx?moduleID=<%#: Item.ModuleID %>" id="parags">See all notes</a></h3>
-                           
-                        </ItemTemplate>
-                    </asp:FormView>
-
-
-
                             </tbody>
                     </table>
                 </div>

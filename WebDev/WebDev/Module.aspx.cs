@@ -15,6 +15,23 @@ namespace WebDev
         {
 
         }
+
+        public Breadcrumb GetBreadcrumbs([QueryString("ModuleID")] string moduleID)
+        {
+
+            Breadcrumb b = new Breadcrumb();
+            if (moduleID != null)
+            {
+                var _db = new WebDev.Models.ModuleContext();
+                Module m = _db.Modules.Find(moduleID);
+                Subject s = _db.Subjects.Find(m.SubjectID);
+
+                b.ModuleID = moduleID;
+                b.SubjectID = s.SubjectID;
+                b.SubjectName = s.SubjectName;
+            }
+            return b;
+        }
         public IQueryable<Module> GetModules([QueryString("ModuleId")] string moduleID)
         {
             var _db = new WebDev.Models.ModuleContext();
@@ -50,26 +67,5 @@ namespace WebDev
             }
             
         }
-
-        public IQueryable<Notes> GetNotes([QueryString("ModuleID")] string moduleID)
-        {
-            var _db = new WebDev.Models.ModuleContext();
-            IQueryable<Notes> query = _db.Notes;
-            if (moduleID != null && moduleID.Length > 0)
-            {
-                query = query.Where(n => n.ModuleID == moduleID);
-                query = query.OrderByDescending(n => n.Created);
-                query = query.Take(3);
-
-                return query;
-            }
-            else
-            {
-                query = query.Take(0);
-                return query;
-            }
-
-        }
-
     }
 }

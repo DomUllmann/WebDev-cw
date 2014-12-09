@@ -16,6 +16,21 @@ namespace WebDev
 
         }
 
+        public Breadcrumb GetBreadcrumbs([QueryString("SubjectID")] int? subjectID)
+        {
+
+            Breadcrumb b = new Breadcrumb();
+            if (subjectID.HasValue)
+            {
+                var _db = new WebDev.Models.ModuleContext();
+                Subject s = _db.Subjects.Find(subjectID);
+
+                b.SubjectID = s.SubjectID;
+                b.SubjectName = s.SubjectName;
+            }
+            return b;
+        }
+
         public IQueryable<Module> GetModules([QueryString("SubjectID")] int? subjectID)
         {
             var _db = new WebDev.Models.ModuleContext();

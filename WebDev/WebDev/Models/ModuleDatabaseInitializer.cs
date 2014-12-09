@@ -11,7 +11,6 @@ namespace WebDev.Models
             GetModules().ForEach(m => context.Modules.Add(m));
             GetQuestions().ForEach(q => context.Questions.Add(q));
             GetAnswers().ForEach(a => context.Answers.Add(a));
-            GetNotes().ForEach(n => context.Notes.Add(n));
         }
 
         private static List<Subject> GetSubjects()
@@ -40,21 +39,21 @@ namespace WebDev.Models
                 new Module{
                     ModuleID = "COMP6205",
                     ModuleTitle = "Web Development",
-                    Description = "A module to explore the area of Web Development, teaching students best",// + 
-                                    //" practise and to introduce students to ASP.net and the Visual Studio" +
-                                   // " development environment.",
+                    Description = "A module to explore the area of Web Development, teaching students best" + 
+                                    " practise and to introduce students to ASP.net and the Visual Studio" +
+                                    " development environment.",
                     SubjectID = 1
                 },
                 new Module{
                     ModuleID = "COMP6203",
                     ModuleTitle = "Intelligent Agents",
-                    Description = "This unit gives a broad introduction to the new and rapidly expanding field of agent-based computing.",// It introduces the key concepts and models of the field, dealing both with the individual agents and with their interactions. Particular emphasis is placed on automated negotiation, cooperation and on-line auctions, and students are required to program a trading agent in Java which will compete in a class tournament within a simulated trading environment",
+                    Description = "This unit gives a broad introduction to the new and rapidly expanding field of agent-based computing. It introduces the key concepts and models of the field, dealing both with the individual agents and with their interactions. Particular emphasis is placed on automated negotiation, cooperation and on-line auctions, and students are required to program a trading agent in Java which will compete in a class tournament within a simulated trading environment",
                     SubjectID = 1
                 },
                 new Module{
                     ModuleID = "COMP6201",
                     ModuleTitle = "E-Business Strategy",
-                    Description = "This course exposes students to the problems and methods of strategic management of large scale e-business systems.",// These are systems whose continuing operation and evolution is vital for the business or organisation that they serve. IT managers and CIOs must ensure that systems are effective and cost-effective, that new projects give a good return, and that emerging technologies are evaluated and, where appropriate, adopted in an orderly manner. Similarly, emerging risks such as security threats must be evaluated and addressed using appropriate and cost-effective techniques.",
+                    Description = "This course exposes students to the problems and methods of strategic management of large scale e-business systems. These are systems whose continuing operation and evolution is vital for the business or organisation that they serve. IT managers and CIOs must ensure that systems are effective and cost-effective, that new projects give a good return, and that emerging technologies are evaluated and, where appropriate, adopted in an orderly manner. Similarly, emerging risks such as security threats must be evaluated and addressed using appropriate and cost-effective techniques.",
                     SubjectID = 1
                 },
                 new Module{
@@ -271,31 +270,5 @@ namespace WebDev.Models
             };
             return answers;
         }
-
-        private static List<Notes> GetNotes()
-        {
-            var questions = new List<Notes> {
-                new Notes{
-                    NotesID = 1,
-                    NotesTitle = "The first notes document ever!",
-                    NotesBody = "Awesome document!",
-                    User = "Dom",
-                    Created = System.DateTimeOffset.Now,
-                    
-                    ModuleID = "COMP6205"
-                },
-                new Notes{
-                    NotesID = 2,
-                    NotesTitle = "Wow it works, awesome!",
-                    NotesBody = "Of course it works, you guys have done it awesomely!",
-                    User = "Sam",
-                    Created = System.DateTimeOffset.Now,
-                    UserModified = "Dom",
-                    ModuleID = "COMP6205"
-                }
-            };
-            return questions;
-        }
-
     }
 }

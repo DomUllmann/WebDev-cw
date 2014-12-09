@@ -25,15 +25,6 @@ namespace WebDev.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
-
-
-
-        public string Degree { get; set; }
-
-        public string Bio { get; set; }
-
-        public string UserNameShort { get; set; }
-
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -81,7 +72,6 @@ namespace WebDev
             var absoluteUri = "/Account/ResetPassword?" + CodeKey + "=" + HttpUtility.UrlEncode(code);
             return new Uri(request.Url, absoluteUri).AbsoluteUri.ToString();
         }
-
 
         public static string GetUserConfirmationRedirectUrl(string code, string userId, HttpRequest request)
         {

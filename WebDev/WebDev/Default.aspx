@@ -2,9 +2,16 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+    <div class="container">
+        <div class="row">
+            <div class="wrapper style1 first">
+            You are here: <a href="/Default.aspx">Home</a>
+                </div>
+        </div>
+    </div>
     <!-- Home -->
     <section>
-        <div class="wrapper style1 first">
+        <div class="wrapper style1">
           <article class="container" id="top">
             <div class="row">
               <div class="col-lg-4 image fit"><img src="/Content/images/icon.jpg" alt="Welcome!" /></div>

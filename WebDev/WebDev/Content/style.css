@@ -459,6 +459,14 @@ ol.default li {
 /*********************************************************************************/
 /* Custom css                                                                      */
 /*********************************************************************************/
+
+.answer{
+ border: 5px solid #90BADE;
+ border-radius: 10px;
+ background-color: white;
+ margin-bottom: 2em;
+}
+
 .contentTable {
 	background-color: #fff;
 	width : 100%;
@@ -494,6 +502,10 @@ ol.default li {
 	padding: 3em 22em 3em 22em;
 	color: #000;
 	text-align: left
+}
+
+#grey{
+    background-color: #999;
 }
 /*********************************************************************************/
 /* Wrappers                                                                      */

@@ -13,6 +13,15 @@ namespace WebDev {
     public partial class ViewQuestion {
         
         /// <summary>
+        /// crumb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView crumb;
+        
+        /// <summary>
         /// question control.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,14 @@ namespace WebDev {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView answerList;
+        
+        /// <summary>
+        /// LoginView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView LoginView1;
     }
 }
