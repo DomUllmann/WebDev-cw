@@ -15,6 +15,5 @@ namespace WebDev.Models
 
         public int? SubjectID { get; set; }
 
-        public virtual Subject Subject { get; set; }
     }
 }

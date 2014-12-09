@@ -11,6 +11,5 @@ namespace WebDev.Models
         [Required, StringLength(100), Display(Name = "Subject Area")]
         public string SubjectName { get; set; }
 
-        public virtual ICollection<Module> Modules { get; set; }
     }
 }

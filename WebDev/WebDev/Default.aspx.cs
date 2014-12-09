@@ -16,7 +16,7 @@ namespace WebDev
 
         }
 
-        public IQueryable<Subject> GetSubjects([QueryString("SubjectID")] int? subjectID)
+        public IQueryable<Subject> GetSubjects()
         {
             var _db = new WebDev.Models.ModuleContext();
             IQueryable<Subject> query = _db.Subjects;

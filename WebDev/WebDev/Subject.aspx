@@ -1,30 +1,32 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebDev._Default" %>
-
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
-    <!-- Home -->
+﻿<%@ Page Title="Subject" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Subject.aspx.cs" Inherits="WebDev.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <section>
         <div class="wrapper style1 first">
           <article class="container" id="top">
             <div class="row">
-              <div class="col-lg-4 image fit"><img src="/Content/images/icon.jpg" alt="Welcome!" /></div>
+              <div class="col-lg-4 image fit"><img src="/Content/images/study.jpg" alt="Let's study!" /></div>
               <div class="col-lg-8">
-                <header>
-                  <h1>Welcome to <strong>U-Notes</strong>!</h1>
-                </header>
-                <p>With U-Notes you can easily share your knowledge about your University subjects and modules with your fellow students.</p>
-                <p>You can either view and edit collaborative notes document or if you need help with something specific, just ask a question in the Q&A section and wait till someone answers! </p>
+                    <asp:FormView ID="subject" runat="server" DataKeyNames="SubjectID"
+                        ItemType ="WebDev.Models.Subject" SelectMethod ="GetSubjects">
+
+                        <ItemTemplate>
+                            <header>
+                                <h1><strong><%#: Item.SubjectName %></strong>!</h1>
+                            </header>
+                            <p>Welcome to the subject page for <b><%#: Item.SubjectName %></b>!</p>
+                        </ItemTemplate>
+                    </asp:FormView>
+                  <p>Here you'll find a list of all of the modules that currently have Notes or Questions here on U-Note.<br />
+                You can either view and edit collaborative notes document or if you need help with something specific, just ask a question in the Q&A section and wait till someone answers! </p>
               </div>
             </div>
           </article>
         </div>
     </section>
     <section>
-
-<!-- List of topics -->
-    <asp:ListView ID="subjectList" runat="server"
-        DataKeyNames="SubjectID" GroupItemCount="1"
-        ItemType="WebDev.Models.Subject" SelectMethod="GetSubjects">
+        <asp:ListView ID="moduleList" runat="server"
+        DataKeyNames="ModuleID" GroupItemCount="1"
+        ItemType="WebDev.Models.Module" SelectMethod="GetModules">
         <EmptyDataTemplate>
             <table>
                 <tr>
@@ -41,7 +43,7 @@
                 <ItemTemplate>
                     <tr>
                     <td>
-                        <a href="Subject.aspx?subjectID=<%#:Item.SubjectID%>" id="parags"><%#:Item.SubjectName %></a>
+                        <a href="Module.aspx?moduleID=<%#:Item.ModuleID%>" id="parags"><%#:Item.ModuleID %> - <%#: Item.ModuleTitle %></a>
                     </td>
                         </tr>
                 </ItemTemplate>
@@ -52,8 +54,6 @@
                         <div class="noteslist">
             <div class="container">
             <div class="row">
-                <div class="col-lg-3"></div>
-                    <div class="col-lg-6">
             <table class="table">
                         <tbody>
                             <tr id="groupPlaceholder" runat="server"></tr>
@@ -70,7 +70,5 @@
                 </div>
         </LayoutTemplate>
     </asp:ListView>
-
-        </section>
-
+    </section>
 </asp:Content>
