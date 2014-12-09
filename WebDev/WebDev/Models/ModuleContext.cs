@@ -11,5 +11,7 @@ namespace WebDev.Models
         public DbSet<Module> Modules { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
+
+        public DbSet<Notes> Notes { get; set; }
     }
 }

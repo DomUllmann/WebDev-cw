@@ -50,5 +50,26 @@ namespace WebDev
             }
             
         }
+
+        public IQueryable<Notes> GetNotes([QueryString("ModuleID")] string moduleID)
+        {
+            var _db = new WebDev.Models.ModuleContext();
+            IQueryable<Notes> query = _db.Notes;
+            if (moduleID != null && moduleID.Length > 0)
+            {
+                query = query.Where(n => n.ModuleID == moduleID);
+                query = query.OrderByDescending(n => n.Created);
+                query = query.Take(3);
+
+                return query;
+            }
+            else
+            {
+                query = query.Take(0);
+                return query;
+            }
+
+        }
+
     }
 }

@@ -1,10 +1,11 @@
-﻿<%@ Page Title="List of Questions" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="QuestionList.aspx.cs" Inherits="WebDev.QuestionList" %>
+﻿<%@ Page Title="List of Notes Documents" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NotesList.aspx.cs" Inherits="WebDev.NotesList" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <section>
         <div class="wrapper style1 first">
           <article class="container" id="top">
             <div class="row">
-              <div class="col-lg-4 image fit"><img src="/Content/images/question.jpg" alt="Here's the best place to get help!" /></div>
+              <div class="col-lg-4 image fit"><img src="/Content/images/notes.png" alt="Here's the best place learn something new!" /></div>
               <div class="col-lg-8">
                     <asp:FormView ID="module" runat="server" DataKeyNames="ModuleID"
                         ItemType ="WebDev.Models.Module" SelectMethod ="GetModules">
@@ -20,10 +21,9 @@
                             <header>
                                 <h1><strong><%#: Item.ModuleID %>: <%#: Item.ModuleTitle %></strong>!</h1>
                             </header>
-                            <p>Here's a list of all the questiosn for <b><%#: Item.ModuleTitle %></b>!</p>
-                  <p>Here you'll find all of the questions that have been asked so far, hopefully with some really usefull answers to them! <br />
-                      If your questions hasn't already been asked, why not ask a new one?
-                      great answers too!</p>
+                            <p>Here's a list of all the notes documents for <b><%#: Item.ModuleTitle %></b>!</p>
+                  <p>Here you'll find all of the documents that have been written for this module. You can view the documents, modify them and create your own documents as well.<br />
+                      Feel free to contribute with your knowledge to our community!</p>
                         </ItemTemplate>
                     </asp:FormView>
               </div>
@@ -38,12 +38,12 @@
                         <div class="noteslist">
             <div class="container">
             <div class="row">
-                <h1>Questions</h1>
+                <h1>Notes</h1>
             <table class="table">
                         <tbody>
-        <asp:ListView ID="questionList" runat="server"
-        DataKeyNames="QuestionID" GroupItemCount="1"
-        ItemType="WebDev.Models.Question" SelectMethod="GetQuestions">
+        <asp:ListView ID="notesList" runat="server"
+        DataKeyNames="NotesID" GroupItemCount="1"
+        ItemType="WebDev.Models.Notes" SelectMethod="GetNotes">
         <EmptyDataTemplate>
             <table>
                 <tr>
@@ -61,7 +61,7 @@
                 <ItemTemplate>
                     <tr>
                     <td>
-                        <a href="ViewQuestion.aspx?questionID=<%#:Item.QuestionID%>" id="parags"><%#:Item.QuestionTitle %></a>
+                        <a href="ViewNotes.aspx?notesID=<%#:Item.NotesID%>" id="parags"><%#:Item.NotesTitle %></a>
                     </td>
                         </tr>
                 </ItemTemplate>
@@ -81,3 +81,4 @@
                     </div>
     </section>
 </asp:Content>
+

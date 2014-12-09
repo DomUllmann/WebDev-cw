@@ -10,24 +10,15 @@
 namespace WebDev {
     
     
-    public partial class ViewQuestion {
+    public partial class ViewNotes {
         
         /// <summary>
-        /// question control.
+        /// notes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView question;
-        
-        /// <summary>
-        /// answerList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView answerList;
+        protected global::System.Web.UI.WebControls.FormView notes;
     }
 }

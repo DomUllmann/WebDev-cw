@@ -170,6 +170,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="NotesList.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -212,6 +213,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="ViewNotes.aspx" />
     <Content Include="ViewQuestion.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -368,6 +370,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\NotesContext.cs" />
+    <Compile Include="Models\NotesDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Module.cs" />
     <Compile Include="Models\ModuleDatabaseInitializer.cs" />
@@ -377,6 +381,13 @@
     <Compile Include="Models\QuestionAnswerContext.cs" />
     <Compile Include="Models\QuestionAnswerDatabaseInitializer.cs" />
     <Compile Include="Models\Subject.cs" />
+    <Compile Include="NotesList.aspx.cs">
+      <DependentUpon>NotesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotesList.aspx.designer.cs">
+      <DependentUpon>NotesList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionList.aspx.cs">
       <DependentUpon>QuestionList.aspx</DependentUpon>
@@ -400,6 +411,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewNotes.aspx.cs">
+      <DependentUpon>ViewNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewNotes.aspx.designer.cs">
+      <DependentUpon>ViewNotes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewQuestion.aspx.cs">
       <DependentUpon>ViewQuestion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -73,6 +73,7 @@
                         
         </LayoutTemplate>
     </asp:ListView>
+                            
         <asp:FormView ID="mod" runat="server" DataKeyNames="ModuleID"
                         ItemType ="WebDev.Models.Module" SelectMethod ="GetModules">
                         <EmptyDataTemplate>
@@ -84,6 +85,61 @@
                            
                         </ItemTemplate>
                     </asp:FormView>
+
+                            
+                            </tbody>
+                    </table>
+                </div>
+
+                            <div class="row">
+                <h1>Questions</h1>
+            <table class="table">
+                        <tbody>
+                             <asp:ListView ID="ListView2" runat="server"
+        DataKeyNames="NotesID" GroupItemCount="3"
+        ItemType="WebDev.Models.Notes" SelectMethod="GetNotes">
+        <EmptyDataTemplate>
+            <table>
+                <tr>
+                    <td>Oops, something went wrong, please try again!</td>
+                </tr>
+            </table>
+        </EmptyDataTemplate>
+        <EmptyItemTemplate>
+            <td />
+        </EmptyItemTemplate>
+        <GroupTemplate>
+                     <td id="itemPlaceholder" runat="server"></td>
+                    
+                </GroupTemplate>
+                <ItemTemplate>
+                    <tr>
+                    <td>
+                        <a href="ViewNotes.aspx?notesID=<%#:Item.NotesID%>" id="parags"><%#:Item.NotesTitle %></a>
+                    </td>
+                        </tr>
+                </ItemTemplate>
+            
+        <LayoutTemplate>
+                            <tr id="groupPlaceholder" runat="server"></tr>
+                        
+        </LayoutTemplate>
+    </asp:ListView>
+                            
+        <asp:FormView ID="FormView2" runat="server" DataKeyNames="ModuleID"
+                        ItemType ="WebDev.Models.Module" SelectMethod ="GetModules">
+                        <EmptyDataTemplate>
+                        </EmptyDataTemplate>
+
+                        <ItemTemplate>
+                            
+                                <h3><a href="NotesList.aspx?moduleID=<%#: Item.ModuleID %>" id="parags">See all notes</a></h3>
+                           
+                        </ItemTemplate>
+                    </asp:FormView>
+
+
+
                             </tbody>
                     </table>
                 </div>
