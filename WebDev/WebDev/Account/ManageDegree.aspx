@@ -1,4 +1,4 @@
-﻿<%@ Page Page Title="Manage Degree" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="ManageDegree.aspx.cs" Inherits="WebDev.Account.ManageDegree" %>
+﻿<%@ Page Title="Manage Degree" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="ManageDegree.aspx.cs" Inherits="WebDev.Account.ManageDegree" %>
 
 
                         
@@ -6,7 +6,7 @@
     <h2><%: Title %>.</h2>
     <div class="form-horizontal">
         <section id="degreeForm">
-            <asp:PlaceHolder runat="server" ID="ChangeDegree" Visible="false">
+           ,<!-- <asp:PlaceHolder runat="server" ID="ChangeDegree" Visible="false">
                 
                 <div class="form-horizontal">
                     <h4>Change DegreeForm</h4>
@@ -21,7 +21,7 @@
                                 Display="Dynamic" ValidationGroup="ChangeDegree" />
                             <asp:ModelErrorMessage runat="server" ModelStateKey="NewPassword" AssociatedControlID="password"
                                 CssClass="text-danger" SetFocusOnError="true" />-->
-                        </div>
+                       <!-- </div>
                     </div>
 
                     <div class="form-group">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-            </asp:PlaceHolder>
+            </asp:PlaceHolder>-->
 
             
         </section>

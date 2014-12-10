@@ -52,11 +52,12 @@
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right col-lg-5">
                                     <li><a runat="server" href="~/Account/Register">Welcome, Guest! </a></li>
-                                    <li><a runat="server" href="~/AccountRegister"><img src="/Content/images/icon.jpg" alt ="Avatar" height="42" width="42"  /></a></li>
+                                    <li><a runat="server" href="~/Account/Register"><img src="/Content/images/icon.jpg" alt ="Avatar" height="42" width="42"  /></a></li>
                                 </ul>
                             </AnonymousTemplate>
                             <LoggedInTemplate>
                                 <ul class="nav navbar-nav navbar-right 4u">
+                                    <li><a runat="server" href="~/Account/Manage"><img src="/Content/images/<%: Avatar %>" alt ="Avatar" height="42" width="42"  /></a></li>
                                     <li><a runat="server" href="~/Account/Manage" title="View Profile">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                     <li>
                                         <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />

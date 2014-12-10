@@ -7,6 +7,13 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Owin;
+using WebDev.Models;
+
 namespace WebDev
 {
     public partial class SiteMaster : MasterPage
@@ -68,8 +75,15 @@ namespace WebDev
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+                        var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
+                        var u = manager.FindById(Context.User.Identity.GetUserId());
+                        Avatar = u.AvatarURL;
         }
+
+        public string Avatar { get; set; }
+
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {

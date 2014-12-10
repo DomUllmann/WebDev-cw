@@ -7,12 +7,20 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebDev.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebDev.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        [ScaffoldColumn(true)]
+        public string Degree { get; set; }
+        [ScaffoldColumn(false)]
+        public string AvatarURL { get; set; }
+        [ScaffoldColumn(true)]
+        public string Bio { get; set; }
+        
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
