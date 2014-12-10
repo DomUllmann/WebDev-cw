@@ -92,6 +92,7 @@ namespace WebDev
 
         protected void cancelButton_Click(object sender, EventArgs e)
         {
+            
             string questionID = Page.ClientQueryString;
             Response.Redirect("~/ViewQuestion.aspx?" + questionID);
         }

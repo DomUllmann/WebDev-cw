@@ -1,6 +1,20 @@
 ﻿<%@ Page Title="List of Notes Documents" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NotesList.aspx.cs" Inherits="WebDev.NotesList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="wrapper style1 first">
+                <asp:FormView ID="crumb" runat="server" DataKeyNames="ID" 
+                    ItemType="WebDev.Models.Breadcrumb" SelectMethod="GetBreadcrumbs">
+                    <EmptyDataTemplate></EmptyDataTemplate>
+                    <ItemTemplate>
+                        You are here: <a href="Default.aspx">Home</a> -> <a href="Subject.aspx?subjectID=<%#:Item.SubjectID %>"><%#:Item.SubjectName %></a>
+                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> -> Notes List
+                    </ItemTemplate>
+                </asp:FormView>
+                </div>
+        </div>
+    </div>
      <section>
         <div class="wrapper style1 first">
           <article class="container" id="top">

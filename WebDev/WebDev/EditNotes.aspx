@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Notes page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewNotes.aspx.cs" Inherits="WebDev.ViewNotes" %>
+﻿<%@ Page Title="Edit document" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditNotes.aspx.cs" Inherits="WebDev.EditNotes" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -9,7 +9,7 @@
                     <EmptyDataTemplate></EmptyDataTemplate>
                     <ItemTemplate>
                         You are here: <a href="Default.aspx">Home</a> -> <a href="Subject.aspx?subjectID=<%#:Item.SubjectID %>"><%#:Item.SubjectName %></a>
-                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> -> Notes Document
+                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> -> Notes Document [EDIT MODE]
                     </ItemTemplate>
                 </asp:FormView>
                 </div>
@@ -42,8 +42,10 @@
                             <p id="notescontent"><%#:Item.NotesBody %></p>
 
                             <br /><br />
-                            <a href="EditNotes.aspx?notesID=<%#:Item.NotesID %>">
-                            <asp:Button runat="server" Text="Edit this document" /></a>
+                            <a href="ViewNotes.aspx?notesID=<%#:Item.NotesID %>">
+                            <asp:Button runat="server" Text="Save changes" /></a>
+                            <a href="ViewNotes.aspx?notesID=<%#:Item.NotesID %>">
+                            <asp:Button runat="server" Text="Cancel" /></a>
                             <br /><br />
                             <a href="Module.aspx?moduleID=<%#:Item.ModuleID%>" id="parags">Go back to <%#:Item.ModuleID %></a>
                         </ItemTemplate>

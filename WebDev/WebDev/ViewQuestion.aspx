@@ -10,8 +10,7 @@
                     <EmptyDataTemplate></EmptyDataTemplate>
                     <ItemTemplate>
                         You are here: <a href="Default.aspx">Home</a> -> <a href="Subject.aspx?subjectID=<%#:Item.SubjectID %>"><%#:Item.SubjectName %></a>
-                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> ->
-                        <a href="QuestionList.aspx?moduleID="<%#:Item.ModuleID %>">Question</a>
+                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> -> Question
                     </ItemTemplate>
                 </asp:FormView>
                 </div>
@@ -104,8 +103,9 @@
             <ol>
                 <asp:DynamicEntity runat="server" Mode="Insert" />
             </ol>
-            <asp:Button runat="server" Text="Add" CommandName="Insert" />
-            <asp:Button runat="server" Text="Cancel" CausesValidation="false" OnClick="cancelButton_Click" />
+            <asp:Button runat="server" Text="Ask a question" CommandName="Insert" />
+            <asp:Button runat="server" Text="Create a document" CausesValidation="false" OnClick="cancelButton_Click" />
+            <br />
         </fieldset>
     </InsertItemTemplate>
 </asp:FormView>

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Notes page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewNotes.aspx.cs" Inherits="WebDev.ViewNotes" %>
+﻿<%@ Page Title="Create a document" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateNotes.aspx.cs" Inherits="WebDev.CreateNotes" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -53,6 +54,31 @@
     </div>
   </article>
 </div>
+
+
+
+    <asp:LoginView ID="LoginView1" runat="server">
+        <LoggedInTemplate>
+            <asp:FormView runat="server" ID="addAnswerForm"
+    ItemType="WebDev.Models.Answer" 
+    InsertMethod="addAnswerForm_addItem" DefaultMode="Insert"
+    RenderOuterTable="false" OnItemInserted="addStudentForm_ItemAdded">
+    <InsertItemTemplate>
+        <fieldset>
+            <ol>
+                <asp:DynamicEntity runat="server" Mode="Insert" />
+            </ol>
+            <asp:Button runat="server" Text="Submit answer" CommandName="Insert" />
+            <asp:Button runat="server" Text="Cancel and refresh" CausesValidation="false" OnClick="cancelButton_Click" />
+        </fieldset>
+    </InsertItemTemplate>
+</asp:FormView>
+
+        </LoggedInTemplate>
+        <AnonymousTemplate>
+            <p>Please log in to answer a question.</p>
+        </AnonymousTemplate>
+    </asp:LoginView>
 
     
 </asp:Content>

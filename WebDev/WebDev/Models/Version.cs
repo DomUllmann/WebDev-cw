@@ -4,19 +4,20 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace WebDev.Models
 {
-    public class Notes
+    public class Version
     {
 
         [ScaffoldColumn(false)]
-        public int NotesID { get; set; }
+        public int VersionID { get; set; }
 
         [Required, StringLength(250)]
-        public string NotesTitle { get; set; }
+        public string VersionTitle { get; set; }
 
         [Required, StringLength(10000)]
-        public string NotesBody { get; set; }
+        public string VersionBody { get; set; }
 
         [ScaffoldColumn(false), Required, StringLength(128)]
         public string User { get; set; }
@@ -34,8 +35,11 @@ namespace WebDev.Models
 
         [ScaffoldColumn(false), Required, StringLength(8)]
         public string ModuleID { get; set; }
-    
+
+        [ScaffoldColumn(false), Required]
+        public string NotesID { get; set; }
+
+
+
     }
-
-
 }

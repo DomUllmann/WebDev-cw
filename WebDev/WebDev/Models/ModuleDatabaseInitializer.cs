@@ -109,8 +109,8 @@ namespace WebDev.Models
                 },
                 new Question{
                     QuestionID = 2,
-                    QuestionTitle = "I'm not sure if it's doing anything?",
-                    QuestionBody = "Is this working I wonder? Can you tell me please?",
+                    QuestionTitle = "android: NullPointerException when accessing a variable, please help",
+                    QuestionBody = "I got this exception whenever i run this code: ***CODE***. Anyone knows how to fix it?",
                     User = "Sam",
                     Created = System.DateTimeOffset.Now,
                     Solved = false,
@@ -118,7 +118,7 @@ namespace WebDev.Models
                 },
                 new Question{
                     QuestionID = 3,
-                    QuestionTitle = "Please?",
+                    QuestionTitle = "asp.net database not initializing",
                     QuestionBody = "Is this working I wonder? Can you tell me please?",
                     User = "Sam",
                     Created = System.DateTimeOffset.Now,
@@ -196,7 +196,7 @@ namespace WebDev.Models
                 },
                 new Answer{
                     AnswerID = 2,
-                    AnswerBody = "Yep does!",
+                    AnswerBody = "Yep i know how to help you!",
                     User = "Dom",
                     Solved = true,
                     Created = System.DateTimeOffset.Now,
@@ -284,8 +284,8 @@ namespace WebDev.Models
                 },
                 new Notes{
                     NotesID = 2,
-                    NotesTitle = "Wow it works, awesome!",
-                    NotesBody = "Of course it works, you guys have done it awesomely!",
+                    NotesTitle = "ASP.NET",
+                    NotesBody = "In this document I am going to explain the basics of asp.net so everyone can get familiar with it.",
                     User = "Sam",
                     Created = System.DateTimeOffset.Now,
                     Modified = System.DateTimeOffset.Now,

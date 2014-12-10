@@ -19,7 +19,8 @@ namespace WebDev.Models
 
         public string SubjectName { get; set; }
 
-        public int NoteID { get; set; }
+        public int NotesID { get; set; }
+
 
     }
 

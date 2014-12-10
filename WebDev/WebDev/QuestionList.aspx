@@ -8,8 +8,7 @@
                     <EmptyDataTemplate></EmptyDataTemplate>
                     <ItemTemplate>
                         You are here: <a href="Default.aspx">Home</a> -> <a href="Subject.aspx?subjectID=<%#:Item.SubjectID %>"><%#:Item.SubjectName %></a>
-                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> ->
-                        <a href="QuestionList.aspx?moduleID="<%#:Item.ModuleID %>">Question List</a>
+                        -> <a href="Module.aspx?moduleID=<%#:Item.ModuleID %>"><%#:Item.ModuleID %></a> -> Question List
                     </ItemTemplate>
                 </asp:FormView>
                 </div>

@@ -10,7 +10,7 @@
 namespace WebDev {
     
     
-    public partial class ViewNotes {
+    public partial class EditNotes {
         
         /// <summary>
         /// crumb control.

@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebDev.Models;
-using System.Web.ModelBinding;
 
 namespace WebDev
 {
-    public partial class ViewNotes : System.Web.UI.Page
+    public partial class EditNotes : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
+
 
         public Breadcrumb GetBreadcrumbs([QueryString("NotesID")] int? notesID)
         {
@@ -23,9 +24,11 @@ namespace WebDev
             if (notesID != null)
             {
                 var _db = new WebDev.Models.ModuleContext();
+
                 Notes n = _db.Notes.Find(notesID);
                 Module m = _db.Modules.Find(n.ModuleID);
                 Subject s = _db.Subjects.Find(m.SubjectID);
+        
 
                 b.ModuleID = m.ModuleID;
                 b.SubjectID = s.SubjectID;
@@ -51,7 +54,5 @@ namespace WebDev
             }
 
         }
-
-
     }
 }
